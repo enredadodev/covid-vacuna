@@ -36,6 +36,7 @@ import SpainMap from 'components/SpainMap'
 
 export default function Home ({ contributors, data, info, reports, chartDatasets }) {
   const [filter, setFilter] = useState('Totales')
+  // const [poblation, setPoblation] = useState('total')
   const [valueSearch, setValueSearch] = useState('')
   const reportFound = useSearch({ valueSearch })
   const translate = useTranslate()
@@ -201,9 +202,22 @@ export default function Home ({ contributors, data, info, reports, chartDatasets
               </section>
             </div>
           </div>
+          <div className={styles.card}>
+            <header>
+              <Image
+                src='/people.png'
+                alt={translate.home.alt.dosisCompletas}
+                width={150}
+                height={150}
+                priority
+              />
+            </header>
+            <button className={`${styles.poblationButton} ${styles.active}`}>Todos</button>
+            <button className={styles.poblationButton}>+18</button>
 
-          <Progress totals={totals} reportFound={reportFound} />
-          <Prevision totals={totals} />
+            <Progress totals={totals} reportFound={reportFound} />
+            <Prevision totals={totals} />
+          </div>
 
           <DownloadData valueSearch={valueSearch} />
 

@@ -125,6 +125,22 @@
   outline: 0;
 }
 
+.card button.poblationButton{
+  display: inline;
+  color: white;
+  border-radius: 5px;
+  width: auto;
+  position: relative;
+  margin-right: 5px;
+  right: initial;
+  top: -16px;
+}
+
+.card button.poblationButton.active{
+  background-color: var(--app-selection-color);
+  opacity: 1;
+}
+
 .card header {
   background: var(--app-background-color);
   border-radius: 5000px;
